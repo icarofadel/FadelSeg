@@ -5,7 +5,6 @@ export const GlobalCss = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: black;
   font-family: expletus sans, sans-serif;
 }
 `

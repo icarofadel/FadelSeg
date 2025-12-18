@@ -1,10 +1,12 @@
+import Header from "./components/Header"
+import { GlobalCss } from "./styles"
+
 function App() {
 
   return (
     <>
-      <div>
-        <h1>FadelSeg</h1>
-      </div>
+      <GlobalCss/>
+      <Header />
     </>
   )
 }

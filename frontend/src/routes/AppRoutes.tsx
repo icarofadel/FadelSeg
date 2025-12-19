@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
-import Sinistros from '../pages/Sinistro'
+import Sinistro from '../pages/Sinistro'
 
 function AppRoutes() {
     return (
     <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sinistros" element={<Sinistros />} />
+        <Route path="/sinistro" element={<Sinistro />} />
     </Routes>
     )
 }

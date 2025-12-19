@@ -7,7 +7,7 @@ const Header = () => (
     <>
         <S.HeaderContainer>
             <img src={logo} alt="FadelSeg" />
-            <Botao type={'link'} to={'/'} title={'Cadastro de Sinistro'}>Sinistro</Botao>
+            <Botao type={'link'} to={'/sinistro'} title={'Cadastro de Sinistro'}>Sinistro</Botao>
             <Botao type={'link'} to={'/'} title={'Cadastro de Seguro'}>Seguro</Botao>
             <Botao type={'link'} to={'/'} title={'Relatórios'}>Relatórios</Botao>
             <Botao type={'link'} to={'/'} title={'Dashboard'}>Dashboard</Botao>

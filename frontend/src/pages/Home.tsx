@@ -1,4 +1,4 @@
-import logofundo from '../../assets/FadelSeg/path1.png'
+import logofundo from '../assets/FadelSeg/path1.png'
 
 function Home() {
     return (

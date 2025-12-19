@@ -1,16 +1,15 @@
-import Footer from "./components/Footer"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import { GlobalCss } from "./styles"
-import logofundo from '../src/assets/FadelSeg/path1.png'
+import AppRoutes from "./routes/AppRoutes"
 
 function App() {
-
   return (
     <>
-      <GlobalCss/>
+      <GlobalCss />
       <Header />
-      <img className="logo" src={logofundo}/>
-      <Footer/>
+      <AppRoutes />
+      <Footer />
     </>
   )
 }

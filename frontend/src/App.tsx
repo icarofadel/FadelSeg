@@ -1,6 +1,7 @@
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import { GlobalCss } from "./styles"
+import logofundo from '../src/assets/FadelSeg/path1.png'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <>
       <GlobalCss/>
       <Header />
-
+      <img className="logo" src={logofundo}/>
       <Footer/>
     </>
   )

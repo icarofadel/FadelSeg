@@ -7,6 +7,25 @@ export const GlobalCss = createGlobalStyle`
   box-sizing: border-box;
   font-family: expletus sans, sans-serif;
 }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 500px;
+    margin: 50px auto;
+    display: block;
+  }
+}
 `
 
 export const cores = {

@@ -1,12 +1,11 @@
-//import SinistroFilters from '../../src/features/Sinistro/sinistros/components/SinistroTable'
-//import SinistroTable from '../../src/features/Sinistro/sinistros/components/SinistroFilters'
-
-import SinistroSearch from "../features/Sinistro/sinistros/components/SinistroSearch/SinistroSearch"
+import SinistroTable from "../features/Sinistro/sinistros/components/SinistroTable/SinistroTable"
 
 function Sinistro() {
     return (
     <>
-        <SinistroSearch />
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+            <SinistroTable />
+        </div>
     </>
     )
 }

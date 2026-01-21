@@ -1,4 +1,4 @@
-import SinistroTable from "../features/Sinistro/sinistros/components/SinistroTable/SinistroTable"
+import SinistroTable from "../components/SinistroTable/SinistroTable"
 
 function Sinistro() {
     return (

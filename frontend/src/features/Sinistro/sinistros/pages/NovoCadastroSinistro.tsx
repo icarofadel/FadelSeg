@@ -26,6 +26,32 @@ interface FormData {
   dataEntrega: string
 }
 
+// Função para formatar CPF
+const formatarCPF = (valor: string): string => {
+  const apenasNumeros = valor.replace(/\D/g, '')
+  return apenasNumeros.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
+}
+
+// Função para remover máscara de CPF
+const removerMascaraCPF = (valor: string): string => {
+  return valor.replace(/\D/g, '')
+}
+
+// Função para formatar valor em moeda
+const formatarMoeda = (valor: string): string => {
+  const apenasNumeros = valor.replace(/\D/g, '')
+  const numeroFormatado = (parseInt(apenasNumeros || '0') / 100).toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+  return numeroFormatado
+}
+
+// Função para remover formatação de moeda
+const removerFormatacaoMoeda = (valor: string): string => {
+  return valor.replace(/\D/g, '')
+}
+
 export default function NovoCadastroSinistro() {
   const navigate = useNavigate()
   const [tipoComplementar, setTipoComplementar] = useState<TipoComplementar>(null)
@@ -53,9 +79,22 @@ export default function NovoCadastroSinistro() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
     const inputElement = e.target as HTMLInputElement
+    
+    let novoValor: any = value
+    
+    // Aplicar máscara de CPF
+    if (name === 'cpfMotoista') {
+      novoValor = formatarCPF(value)
+    }
+    
+    // Aplicar formatação de moeda
+    if (name === 'valorSinistro') {
+      novoValor = value
+    }
+    
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? inputElement.checked : value,
+      [name]: type === 'checkbox' ? inputElement.checked : novoValor,
     }))
   }
 
@@ -154,13 +193,33 @@ export default function NovoCadastroSinistro() {
 
             <S.FormGroup>
               <S.Label>Valor do sinistro</S.Label>
-              <S.Input
-                type="number"
-                name="valorSinistro"
-                value={formData.valorSinistro}
-                onChange={handleInputChange}
-                placeholder="0.00"
-              />
+              <S.InputWrapper>
+                <S.CurrencySymbol>R$</S.CurrencySymbol>
+                <S.Input
+                  type="text"
+                  name="valorSinistro"
+                  value={formData.valorSinistro}
+                  onChange={(e) => {
+                    const apenasNumeros = removerFormatacaoMoeda(e.target.value)
+                    setFormData(prev => ({
+                      ...prev,
+                      valorSinistro: apenasNumeros,
+                    }))
+                  }}
+                  onBlur={(e) => {
+                    const valor = removerFormatacaoMoeda(e.target.value)
+                    if (valor) {
+                      const valorFormatado = formatarMoeda(valor)
+                      setFormData(prev => ({
+                        ...prev,
+                        valorSinistro: valorFormatado,
+                      }))
+                    }
+                  }}
+                  placeholder="0,00"
+                  style={{ paddingLeft: '40px' }}
+                />
+              </S.InputWrapper>
             </S.FormGroup>
           </S.FormGrid>
         </S.FormSection>

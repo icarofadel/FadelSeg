@@ -94,6 +94,7 @@ export const Input = styled.input`
   font-size: 14px;
   font-family: inherit;
   transition: all 0.3s;
+  width: 100%;
 
   &:focus {
     outline: none;
@@ -104,6 +105,21 @@ export const Input = styled.input`
   &::placeholder {
     color: #ccc;
   }
+`
+
+export const InputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+`
+
+export const CurrencySymbol = styled.span`
+  position: absolute;
+  left: 12px;
+  color: #666;
+  font-weight: 600;
+  pointer-events: none;
 `
 
 export const TextArea = styled.textarea`

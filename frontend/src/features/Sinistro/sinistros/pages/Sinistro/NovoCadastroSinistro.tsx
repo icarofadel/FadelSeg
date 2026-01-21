@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import * as S from './NovoCadastroSinistro.styles'
-import Botao from '../../../../components/Button'
+import * as S from './styles'
+import * as Ss from '../../../../../styles'
+import Botao from '../../../../../components/Button'
 
 type TipoComplementar = 'ciaAerea' | 'motorista' | null
 
@@ -253,7 +254,7 @@ export default function NovoCadastroSinistro() {
           </S.FormGrid>
 
           <S.ActionButtons>
-            <S.ActionButton>Gerar NC Parceiro</S.ActionButton>
+            <S.ActionButton onClick={() => navigate('/sinistro/nc-parceiro')}>Gerar NC Parceiro</S.ActionButton>
             <S.ActionButton>Gerar proc. seguradora</S.ActionButton>
           </S.ActionButtons>
         </S.FormSection>
@@ -425,31 +426,31 @@ export default function NovoCadastroSinistro() {
       </S.Content>
 
       {/* Botões de Ação */}
-      <S.FooterButtons>
-        <S.ButtonWrapper>
+      <Ss.FooterButtons>
+        <Ss.ButtonWrapper>
           <Botao type="button" title="Salvar sinistro" onClick={handleSalvar}>
             Salvar
           </Botao>
-        </S.ButtonWrapper>
+        </Ss.ButtonWrapper>
 
-        <S.ButtonWrapper>
+        <Ss.ButtonWrapper>
           <Botao type="button" title="Imprimir" onClick={handleImprimir}>
             Imprimir
           </Botao>
-        </S.ButtonWrapper>
+        </Ss.ButtonWrapper>
 
-        <S.ButtonWrapperDanger>
+        <Ss.ButtonWrapperDanger>
           <Botao type="button" title="Excluir" onClick={handleExcluir}>
             Excluir
           </Botao>
-        </S.ButtonWrapperDanger>
+        </Ss.ButtonWrapperDanger>
 
-        <S.ButtonWrapper>
+        <Ss.ButtonWrapper>
           <Botao type="button" title="Voltar" onClick={handleVoltar}>
             Voltar
           </Botao>
-        </S.ButtonWrapper>
-      </S.FooterButtons>
+        </Ss.ButtonWrapper>
+      </Ss.FooterButtons>
     </S.Container>
   )
 }

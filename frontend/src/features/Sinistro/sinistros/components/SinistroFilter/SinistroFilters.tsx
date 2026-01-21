@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
 import Botao from '../../../../../components/Button'
 
@@ -19,6 +20,7 @@ interface SinistroFiltersProps {
 }
 
 export default function SinistroFilters({ onFiltrarChange }: SinistroFiltersProps) {
+  const navigate = useNavigate()
   const [filtros, setFiltros] = useState<Filtros>({
   numero: '',
   notafiscal: '',
@@ -62,7 +64,7 @@ export default function SinistroFilters({ onFiltrarChange }: SinistroFiltersProp
       
       <S.ContainerTitulo>
       <h2>Cadastro de sinistros</h2>
-      <Botao type={"button"} title={"Novo sinistro"}>+ Novo sinistro</Botao>
+      <Botao type={"button"} title={"Novo sinistro"} onClick={() => navigate('/sinistro/novo')}>+ Novo sinistro</Botao>
       </S.ContainerTitulo>
       
       <S.FilterGroup>

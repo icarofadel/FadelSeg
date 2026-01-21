@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../../../../styles'
+import { cores } from '../../../styles'
 
 export const Container = styled.div`
   min-height: 100vh;

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
-import Botao from '../../../../../components/Button'
+import Botao from '../Button'
 
 interface Filtros {
   numero: string

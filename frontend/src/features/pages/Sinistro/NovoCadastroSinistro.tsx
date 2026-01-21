@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
-import * as A from '../../../../../styles'
-import Botao from '../../../../../components/Button'
+import * as A from '../../../styles'
+import Botao from '../../../components/Button'
 
 type TipoComplementar = 'ciaAerea' | 'motorista' | null
 

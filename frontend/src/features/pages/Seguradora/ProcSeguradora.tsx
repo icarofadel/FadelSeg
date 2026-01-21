@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import * as S from './styles'
-import * as A from '../../../../../styles'
-import Botao from '../../../../../components/Button'
+import * as A from '../../../styles'
+import Botao from '../../../components/Button'
 
 interface FormDataProcSeguradora {
   // Dados básicos

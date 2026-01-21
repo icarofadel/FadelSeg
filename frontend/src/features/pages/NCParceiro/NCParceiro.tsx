@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
-import * as Ss from '../../../../../styles'
-import Botao from '../../../../../components/Button'
+import * as A from '../../../styles'
+import Botao from '../../../components/Button'
 
 interface FormDataNCParceiro {
   // Informações do sinistro
@@ -217,30 +217,30 @@ export default function NovaPagina() {
 
 
       {/* Botões de Ação */}
-      <Ss.FooterButtons>
-        <Ss.ButtonWrapper>
+      <A.FooterButtons>
+        <A.ButtonWrapper>
           <Botao type="button" title="Salvar sinistro" onClick={handleSalvar}>
             Salvar
           </Botao>
-        </Ss.ButtonWrapper>
+        </A.ButtonWrapper>
 
-        <Ss.ButtonWrapper>
+        <A.ButtonWrapper>
           <Botao type="button" title="Imprimir" onClick={handleImprimir}>
             Imprimir
           </Botao>
-        </Ss.ButtonWrapper>
-        <Ss.ButtonWrapperDanger>
+        </A.ButtonWrapper>
+        <A.ButtonWrapperDanger>
           <Botao type="button" title="Excluir" onClick={handleExcluir}>
             Excluir
           </Botao>
-        </Ss.ButtonWrapperDanger>
+        </A.ButtonWrapperDanger>
 
-        <Ss.ButtonWrapper>
+        <A.ButtonWrapper>
           <Botao type="button" title="Voltar" onClick={handleVoltar}>
             Voltar
           </Botao>
-        </Ss.ButtonWrapper>
-      </Ss.FooterButtons>
+        </A.ButtonWrapper>
+      </A.FooterButtons>
       </S.Content>
     </S.Container>
   )

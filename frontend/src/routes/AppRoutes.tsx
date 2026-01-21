@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Sinistro from '../pages/Sinistro'
-import NovoCadastroSinistro from '../features/Sinistro/sinistros/pages/Sinistro/NovoCadastroSinistro'
-import NovaPagina from '../features/Sinistro/sinistros/pages/NCParceiro/NCParceiro'
-import ProcSeguradora from '../features/Sinistro/sinistros/pages/Seguradora/ProcSeguradora'
+import NovoCadastroSinistro from '../features/pages/Sinistro/NovoCadastroSinistro'
+import NovaPagina from '../features/pages/NCParceiro/NCParceiro'
+import ProcSeguradora from '../features/pages/Seguradora/ProcSeguradora'
 
 function AppRoutes() {
     return (
